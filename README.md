@@ -1,6 +1,6 @@
 # B3STFormer
 # Band-Selected Spectral-Spatial Transformer With Temporal Adaptive Modulation for Hyperspectral Image Change Detection
-The code in this toolbox implements the ["Band-Selected Spectral-Spatial Transformer With Temporal Adaptive Modulation for Hyperspectral Image Change Detection"]([https://ieeexplore.ieee.org/abstract/document/9870837](https://ieeexplore.ieee.org/abstract/document/11668665)). 
+The code in this toolbox implements the ["Band-Selected Spectral-Spatial Transformer With Temporal Adaptive Modulation for Hyperspectral Image Change Detection"]([https://ieeexplore.ieee.org/abstract/document/11668665]). 
 
 ![image](B3STFormer.png)
 
