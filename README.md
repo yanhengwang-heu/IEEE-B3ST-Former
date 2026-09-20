@@ -1,14 +1,29 @@
 # B3STFormer
+# Band-Selected Spectral-Spatial Transformer With Temporal Adaptive Modulation for Hyperspectral Image Change Detection
+The code in this toolbox implements the ["Band-Selected Spectral-Spatial Transformer With Temporal Adaptive Modulation for Hyperspectral Image Change Detection"]([https://ieeexplore.ieee.org/abstract/document/9870837](https://ieeexplore.ieee.org/abstract/document/11668665)). 
 
-Official code release for **B3STFormer: Band-Selected Spectral-Spatial Transformer with Temporal Adaptive Modulation for Hyperspectral Image Change Detection**.
+![image](B3STFormer.png)
 
-B3STFormer contains three main components:
+Citation
+---------------------
 
-- **SDBS**: spectral-aware discriminative band selection for selecting a unified band subset from two temporal HSIs.
-- **Spectral-spatial Transformer**: shared encoder for extracting spectral and spatial features from bi-temporal patch pairs.
-- **TAM**: temporal adaptive modulation for change-sensitive bi-temporal feature fusion.
+**Please kindly cite the papers if this code is useful and helpful for your research.**
 
-This cleaned release keeps the main training, testing, and change-map generation workflow.
+@ARTICLE{11668665,
+  author={Wang, Yanheng and Qin, Kai and Li, Zhuanfeng and He, Yingying and Yan, Shiyong and Sha, Jianjun},
+  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 
+  title={Band-Selected Spectral-Spatial Transformer With Temporal Adaptive Modulation for Hyperspectral Image Change Detection}, 
+  year={2026},
+  volume={19},
+  number={},
+  pages={29541-29553},
+  keywords={Modeling;Transformers;Signal detection;Bismuth;Business intelligence;Hyperspectral imaging;Technology acceptance model;Media Access Control;Rivers;Remote sensing;Band selection;change detection;hyperspectral images (HSIs);transformer},
+  doi={10.1109/JSTARS.2026.3728255}}
+
+    
+    
+How to use it?
+---------------------
 
 ## Requirements
 
@@ -61,40 +76,3 @@ python run_experiments.py \
 
 Run the same command with `--dataset Barbara` or `--dataset River` for the other datasets.
 
-The output directory contains:
-
-```text
-china_last.pt
-china_result.json
-summary.csv
-```
-
-## Change Maps
-
-After training the datasets into the same checkpoint directory, generate prediction and error maps with:
-
-```bash
-python make_change_maps.py \
-  --datasets China Barbara River \
-  --data-root /path/to/change_detection_data \
-  --checkpoint-dir outputs/b3stformer \
-  --output-dir outputs/change_maps
-```
-
-For each dataset, the script saves:
-
-```text
-ground_truth.png
-prediction.png
-error_map.png
-visual_comparison.png
-prediction.npy
-map_metrics.json
-```
-
-The error map uses black for TN, white for TP, red for FP, and blue for FN.
-
-## Notes
-
-- Raw datasets and trained checkpoints are not included in this repository.
-- Please add a final license file before making the repository public.
